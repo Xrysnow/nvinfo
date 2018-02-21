@@ -188,4 +188,20 @@ bool GetMaxCoreClock(uint32_t i, uint32_t* info)
 }
 
 
+bool GetFreeMemory(uint32_t i, uint32_t* info)
+{
+	NV_DISPLAY_DRIVER_MEMORY_INFO inf;
+	if (!GetMemoryInfo(i, &inf))
+		return false;
+	*info = inf.curAvailableDedicatedVideoMemory;
+	return true;
+}
 
+bool GetTotalMemory(uint32_t i, uint32_t* info)
+{
+	NV_DISPLAY_DRIVER_MEMORY_INFO inf;
+	if (!GetMemoryInfo(i, &inf))
+		return false;
+	*info = inf.dedicatedVideoMemory;
+	return true;
+}

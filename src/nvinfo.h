@@ -55,5 +55,8 @@ extern "C"{
 	NVINFO_API bool GetMaxClocks(uint32_t i, GPUClocks* info);
 	NVINFO_API bool GetCurrentCoreClock(uint32_t i, uint32_t* info);
 	NVINFO_API bool GetMaxCoreClock(uint32_t i, uint32_t* info);
+	// mem
+	NVINFO_API bool GetFreeMemory(uint32_t i, uint32_t* info);
+	NVINFO_API bool GetTotalMemory(uint32_t i, uint32_t* info);
 }
 
